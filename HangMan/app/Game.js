@@ -28,10 +28,11 @@ class Game {
     const { text, category } =
       this.quotes[Math.floor(Math.random() * this.quotes.length)];
     this.categoryWrapper.innerHTML = category;
-    this.quote = new Quote(text);
+    this.quote = new Quote(text.toLowerCase());
   }
   guess(letter) {
-    console.log(letter);
+    this.quote.guess(letter);
+    this.drawQuote();
   }
   drawLetters() {
     for (let i = 0; i < 26; i++) {
@@ -44,10 +45,13 @@ class Game {
       this.lettersWrapper.appendChild(button);
     }
   }
-  start() {
-    this.drawLetters();
+  drawQuote() {
     const content = this.quote.getContent();
     this.wordWrapper.innerHTML = content;
+  }
+  start() {
+    this.drawLetters();
+    this.drawQuote();
   }
 }
 
