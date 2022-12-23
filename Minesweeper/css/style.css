@@ -171,6 +171,10 @@ html {
   cursor: pointer;
 }
 
+.cell--is-flag {
+  background-image: url("../assets/flag.svg");
+}
+
 .hide {
   visibility: hidden;
 }
