@@ -17,6 +17,7 @@ export class Counter extends UI {
     this.value++;
     this.#updateValue();
   }
+
   decrement() {
     this.value--;
     this.#updateValue();
